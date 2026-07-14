@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "tradingagents-astock",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-07-14",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "routes": [
+    {
+      "pattern": "tradingagents.stags.cn",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": true
+  },
+  "kv_namespaces": [
+    {
+      "binding": "JOBS",
+      "id": "bf1b6a691930400f907bf75036843533"
+    }
+  ],
+  "vars": {
+    "ADMIN_USERNAME": "admin",
+    "TENCENT_FUNCTION": "tradingagents-astock-job",
+    "TENCENT_NAMESPACE": "default",
+    "TENCENT_REGION": "ap-shanghai"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.05
+    }
+  }
+}

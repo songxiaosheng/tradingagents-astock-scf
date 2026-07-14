@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 Breaking changes within the 0.x line are called out explicitly.
 
+## [Unreleased]
+
+### 新增
+- 增加 Cloudflare Worker + Workers KV + 腾讯云 SCF 异步任务部署层，提供受保护的任务提交、状态轮询和 Markdown 报告入口。
+- 增加 SCF Custom Image 非交互运行时、回调 HMAC 校验及最小部署测试。
+
+### 文档
+- 增加无常驻服务器的 Cloudflare 到 SCF 部署、验证与回滚说明。
+
 ## [0.2.18] — 2026-07-10
 
 合并社区 PR #75（致谢 @wangyuxun6699），与 v0.2.17 的 #76 修复同属一类问题：LLM 工具调用把非股票标识当 `ticker` 传入。

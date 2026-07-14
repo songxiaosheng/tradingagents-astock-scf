@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>A股多Agent分析</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">TradingAgents A-Stock</p>
+        <h1>A股多Agent分析</h1>
+      </div>
+      <button id="refresh" class="icon-command secondary" type="button">
+        <i data-lucide="refresh-cw" aria-hidden="true"></i>
+        <span>刷新</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="submit-band" aria-labelledby="submit-title">
+        <div class="section-heading">
+          <h2 id="submit-title">新分析</h2>
+          <span id="health" class="health">检查中</span>
+        </div>
+        <form id="job-form">
+          <label>
+            <span>股票代码</span>
+            <input id="ticker" name="ticker" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" value="600519" required />
+          </label>
+          <label>
+            <span>分析日期</span>
+            <input id="trade-date" name="tradeDate" type="date" required />
+          </label>
+          <button id="submit" class="icon-command primary" type="submit">
+            <i data-lucide="play" aria-hidden="true"></i>
+            <span>提交分析</span>
+          </button>
+        </form>
+        <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="jobs-band" aria-labelledby="jobs-title">
+        <div class="section-heading">
+          <h2 id="jobs-title">任务记录</h2>
+          <span id="job-count" class="muted">0 项</span>
+        </div>
+        <div class="job-columns" aria-hidden="true">
+          <span>标的</span><span>日期</span><span>状态</span><span>提交时间</span><span></span>
+        </div>
+        <div id="jobs" class="jobs" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <dialog id="report-dialog">
+      <div class="dialog-head">
+        <div>
+          <p id="report-meta" class="eyebrow"></p>
+          <h2 id="report-title">分析报告</h2>
+        </div>
+        <button id="close-report" class="close-button" type="button" aria-label="关闭报告">×</button>
+      </div>
+      <article id="report" class="report"></article>
+    </dialog>
+
+    <script type="module" src="/src/client.ts"></script>
+  </body>
+</html>

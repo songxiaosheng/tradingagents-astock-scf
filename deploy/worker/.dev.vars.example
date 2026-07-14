@@ -1,0 +1,4 @@
+ADMIN_PASSWORD=local-development-password
+CALLBACK_SECRET=local-callback-secret
+TENCENT_SECRET_ID=local-tencent-secret-id
+TENCENT_SECRET_KEY=local-tencent-secret-key

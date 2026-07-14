@@ -11,6 +11,9 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+deploy/worker/node_modules/
+deploy/worker/.dev.vars
+deploy/worker/*.cpuprofile
 downloads/
 eggs/
 .eggs/

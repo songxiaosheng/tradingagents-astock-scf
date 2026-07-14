@@ -1,0 +1,15 @@
+.git
+.github
+.pytest_cache
+.venv
+__pycache__
+*.pyc
+.env
+assets
+examples
+issues
+tests
+web
+deploy/worker/node_modules
+deploy/worker/dist
+deploy/worker/worker-startup.cpuprofile
